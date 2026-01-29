@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqnhgiewducj7"
-path.s3tc="res://.godot/imported/sophia_roughness.png-ca071439336d34821aafeff480d3594e.s3tc.ctex"
+uid="uid://cm0q68gorqjds"
+path.s3tc="res://.godot/imported/sophia_roughness.png-a993c88d21c11b1e401810f3a1cde8b6.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/Player/sophia_skin/model/sophia_roughness.png"
-dest_files=["res://.godot/imported/sophia_roughness.png-ca071439336d34821aafeff480d3594e.s3tc.ctex"]
+source_file="res://assets/player/sophia_skin/model/sophia_roughness.png"
+dest_files=["res://.godot/imported/sophia_roughness.png-a993c88d21c11b1e401810f3a1cde8b6.s3tc.ctex"]
 
 [params]
 

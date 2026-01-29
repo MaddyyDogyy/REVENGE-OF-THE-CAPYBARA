@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="REVENGE OF THE CAPY"
-run/main_scene="uid://1d2qmndufyey"
+run/main_scene="uid://dir65aak7qrgx"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 

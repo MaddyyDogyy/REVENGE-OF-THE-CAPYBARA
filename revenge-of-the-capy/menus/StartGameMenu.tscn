@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://dir65aak7qrgx"]
+
+[ext_resource type="FontFile" uid="uid://bu133lkvcoveo" path="res://assets/fonts/RujisHandwritingFontv.2.0.otf" id="1_irpjt"]
+[ext_resource type="FontFile" uid="uid://bo5d8k084dlvr" path="res://assets/fonts/Segment14.otf" id="2_lc0rc"]
+[ext_resource type="Script" uid="uid://i7v7k1stafq4" path="res://scripts/button_title_play.gd" id="3_lc0rc"]
+
+[node name="Control" type="Control" unique_id=1398899579]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=946886338]
+layout_mode = 0
+offset_right = 1148.0
+offset_bottom = 653.0
+color = Color(0.12264482, 0.13459563, 0.18716493, 1)
+
+[node name="Label" type="Label" parent="." unique_id=36497655]
+layout_mode = 0
+offset_right = 1149.0
+offset_bottom = 322.0
+theme_override_colors/font_color = Color(1, 0.6268161, 0.6267605, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 4
+theme_override_fonts/font = ExtResource("1_irpjt")
+theme_override_font_sizes/font_size = 80
+text = "Revenge of the Capy"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="button-title-play" type="Button" parent="." unique_id=1661206285]
+layout_mode = 0
+offset_left = 336.0
+offset_top = 300.0
+offset_right = 773.0
+offset_bottom = 452.0
+theme_override_colors/font_color = Color(0.96382064, 0.8291952, 0.91928506, 1)
+theme_override_colors/font_focus_color = Color(0.93418306, 0.74702895, 0.9989404, 1)
+theme_override_colors/font_pressed_color = Color(0.91773397, 4.9093364e-06, 0.5781786, 1)
+theme_override_colors/font_hover_color = Color(0.08060051, 0.6664998, 0.74541754, 1)
+theme_override_fonts/font = ExtResource("2_lc0rc")
+theme_override_font_sizes/font_size = 70
+text = "PLAY!"
+flat = true
+script = ExtResource("3_lc0rc")
+
+[connection signal="pressed" from="button-title-play" to="button-title-play" method="_on_pressed"]

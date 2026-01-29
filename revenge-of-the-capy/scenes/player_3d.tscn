@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cgm2cro2y23ng"]
 
 [ext_resource type="Script" uid="uid://blqmnfto6w2l8" path="res://scripts/player_3d.gd" id="1_3swsy"]
-[ext_resource type="PackedScene" uid="uid://prh35jb6tjtd" path="res://assets/Player/sophia_skin/sophia_skin.tscn" id="2_vrjnx"]
+[ext_resource type="PackedScene" uid="uid://prh35jb6tjtd" path="res://assets/player/sophia_skin/sophia_skin.tscn" id="2_vrjnx"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bp1xh"]
 radius = 0.21972656

@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dmcy81a5m2yq"
-path="res://.godot/imported/robot_step_02.wav-fb35b89109c9fa1e9cd53351658ea42e.sample"
+path="res://.godot/imported/robot_step_02.wav-14978a52c2027ad36a0acff9dbe2fbd4.sample"
 
 [deps]
 
-source_file="res://assets/Player/sounds/robot_step_02.wav"
-dest_files=["res://.godot/imported/robot_step_02.wav-fb35b89109c9fa1e9cd53351658ea42e.sample"]
+source_file="res://assets/player/sounds/robot_step_02.wav"
+dest_files=["res://.godot/imported/robot_step_02.wav-14978a52c2027ad36a0acff9dbe2fbd4.sample"]
 
 [params]
 

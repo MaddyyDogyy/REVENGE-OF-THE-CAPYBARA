@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://prh35jb6tjtd"]
 
-[ext_resource type="PackedScene" uid="uid://16iu10wxub40" path="res://assets/Player/sophia_skin/model/sophia.glb" id="1_e4pev"]
-[ext_resource type="Script" uid="uid://b0od2fl2k5ghr" path="res://assets/Player/sophia_skin/sophia_skin.gd" id="1_obcib"]
-[ext_resource type="Material" uid="uid://dye01l0ct4fby" path="res://assets/Player/sophia_skin/model/materials/eye_mat_override.tres" id="4_mms51"]
+[ext_resource type="PackedScene" uid="uid://16iu10wxub40" path="res://assets/player/sophia_skin/model/sophia.glb" id="1_e4pev"]
+[ext_resource type="Script" uid="uid://b0od2fl2k5ghr" path="res://assets/player/sophia_skin/sophia_skin.gd" id="1_obcib"]
+[ext_resource type="Material" uid="uid://dye01l0ct4fby" path="res://assets/player/sophia_skin/model/materials/eye_mat_override.tres" id="4_mms51"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_vapre"]
 animation = &"EdgeGrab"

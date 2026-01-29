@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://1d2qmndufyey"]
 
-[ext_resource type="PackedScene" uid="uid://0fj7xv2f5wks" path="res://assets/Maps/map1.blend" id="1_a202f"]
+[ext_resource type="PackedScene" uid="uid://0fj7xv2f5wks" path="res://assets/maps/map1.blend" id="1_a202f"]
 [ext_resource type="PackedScene" uid="uid://cgm2cro2y23ng" path="res://scenes/player_3d.tscn" id="2_noarx"]
 
 [node name="Node3D" type="Node3D" unique_id=1788269377]

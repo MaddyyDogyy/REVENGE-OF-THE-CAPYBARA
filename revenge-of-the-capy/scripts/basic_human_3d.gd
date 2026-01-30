@@ -1,0 +1,87 @@
+extends CharacterBody3D
+
+@export_group("Camera")
+@export_range(0.0, 1.0) var mouse_sensititvity = 0.25
+
+@export_group("Movement")
+@export var move_speed = 8.0
+@export var acceleration = 20.0
+@export var rotation_speed = 12.0
+@export var jump_impulse = 12.0
+
+@onready var camera_pivot: Node3D = %SpringArmPivot
+@onready var camera: Camera3D = %Camera3D
+@onready var armature: Node3D = $Armature
+@onready var anim_player: AnimationPlayer = $AnimationPlayer
+
+var camera_input_direction = Vector2.ZERO
+var last_movement_direction = Vector3.BACK
+var gravity = -30.0
+
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("left_click"):
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	if event.is_action_pressed("ui_cancel"):
+		get_tree().quit()
+
+func _unhandled_input(event: InputEvent) -> void:
+	# Dit code is om het te checken van als de muis beweegt en is het screen van de game
+	var is_camera_motion = (
+		event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED
+	)
+	
+	if is_camera_motion:
+		camera_input_direction = event.screen_relative * mouse_sensititvity
+
+func _physics_process(delta: float) -> void:
+	# DIT IS VOOR VERTICALE CAMERA MOVEMENT
+	camera_pivot.rotation.x -= camera_input_direction.y * delta
+	# dit stukje onder is gedaan zodat de camera ni te ver uitvliegt 
+	# -PI/6.0 is -30°
+	# PI/3.0 is 60°
+	camera_pivot.rotation.x = clamp(camera_pivot.rotation.x, -PI / 6.0, PI / 3.0)
+	
+	# DIT IS VOOR HORIZONTALE MOVEMENT
+	camera_pivot.rotation.y -= camera_input_direction.x * delta
+	
+	camera_input_direction = Vector2.ZERO
+	
+	# Dit stuk van de code zal het movement van de character zo doen dat als je naar rechts kijkt en naar links stapt dat je naar links staptt
+	# En niet zodat je constant naar hetzelfde richting gaat omdat je de global x en y directions gebruikt :p
+	var raw_input = Input.get_vector("move_left", "move_right", "move_up", "move_down")
+	var forward = camera.global_basis.z
+	var right = camera.global_basis.x
+	
+	var move_direction = forward * raw_input.y + right * raw_input.x
+	move_direction.y = 0.0
+	move_direction = move_direction.normalized()
+	
+	var y_velocity = velocity.y
+	velocity.y = 0.0
+	velocity = velocity.move_toward(move_direction * move_speed, acceleration * delta)
+	velocity.y = y_velocity + gravity * delta
+	
+	var is_starting_jump = Input.is_action_just_pressed("jump") and is_on_floor()
+	if is_starting_jump:
+		velocity.y += jump_impulse
+	
+	move_and_slide()
+	
+	if move_direction.length() > 0.2:
+		last_movement_direction = move_direction
+	var target_angle = Vector3.FORWARD.signed_angle_to(last_movement_direction, Vector3.UP)
+	armature.global_rotation.y = lerp_angle(armature.rotation.y, target_angle, rotation_speed * delta)
+	
+	#if is_starting_jump:
+	#	sophia_skin.jump()
+	#elif not is_on_floor() and velocity.y < 0:
+	#	sophia_skin.fall()
+	#elif  is_on_floor():
+	var ground_speed = velocity.length()
+	if ground_speed > 0.1:
+		if anim_player.current_animation != "run":
+			anim_player.play("run")
+	else:
+		if anim_player.current_animation != "idle_001":
+			anim_player.play("idle_001")

@@ -1,12 +1,11 @@
 [gd_scene format=3 uid="uid://1d2qmndufyey"]
 
-[ext_resource type="PackedScene" uid="uid://0fj7xv2f5wks" path="res://assets/maps/map1.blend" id="1_a202f"]
-[ext_resource type="PackedScene" uid="uid://cgm2cro2y23ng" path="res://scenes/player_3d.tscn" id="2_noarx"]
+[ext_resource type="PackedScene" uid="uid://dlbfm3gfxuml0" path="res://scenes/map_1.tscn" id="1_wwpf4"]
+[ext_resource type="PackedScene" uid="uid://5o5y07jup2nt" path="res://scenes/basic_human_3d.tscn" id="2_wwpf4"]
 
 [node name="Node3D" type="Node3D" unique_id=1788269377]
 
-[node name="map1" parent="." unique_id=917128008 instance=ExtResource("1_a202f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.9819026, 0, 1.1646152)
+[node name="basic human" parent="." unique_id=1639994609 instance=ExtResource("2_wwpf4")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.7071204, 0.0630461, 1.8522367)
 
-[node name="Player3D" parent="." unique_id=1998737174 instance=ExtResource("2_noarx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.9558353, -0.026229858, 0.80630493)
+[node name="map1" parent="." unique_id=1808534154 instance=ExtResource("1_wwpf4")]
